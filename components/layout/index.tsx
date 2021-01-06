@@ -7,7 +7,7 @@ type Props = {
  title?: string
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+const Layout = ({ children, title = 'two-teeth' }: Props) => (
     <div>
      <Head>
       <title>{title}</title>
@@ -19,10 +19,10 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
        <Link href="/">
         <a>릴리즈노트</a>
        </Link>
-       <Link href="/anonymous">
+       <Link href={"/anonymous"}>
         <a>익명게시판</a>
        </Link>
-       <Link href="/teampage">
+       <Link href={"/teampage"}>
         <a>개발자소개</a>
        </Link>
       </nav>
