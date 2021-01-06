@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { wrapper } from '../store'
-import { startClock, tickClock } from '../actions'
+import { startClock , tickClock} from '../actions/act'
+import Layout from "components/layout";
 
 
 const Other = () => {
@@ -11,7 +12,11 @@ const Other = () => {
     dispatch(startClock())
   }, [dispatch])
 
-  return <Page title="Other Page" linkTo="/" NavigateTo="Index Page" />
+  return (
+      <Layout title="ONE-TOOTH">
+        <h1>릴리즈노트</h1>
+      </Layout>
+  )
 }
 
 export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
