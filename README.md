@@ -44,8 +44,8 @@ Next.js는 현재 TypeScript에 대한 내장 지원이 있으므로 <br/>
 next-redux-wrapper가 saga를 지원, <br/>
 next-redux-saga을 사용할 필요가 없었다. 
 
-https://github.com/vercel/next.js/tree/canary/examples/with-redux-saga
-https://rickandmortyapi.com/api/character/
+1 https://github.com/vercel/next.js/tree/canary/examples/with-redux-saga
+2 https://rickandmortyapi.com/api/character/
 ## babel 설정 
 
 ## prettier 설정
