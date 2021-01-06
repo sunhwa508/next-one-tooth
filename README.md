@@ -2,11 +2,11 @@
 
 원메딕스 인더스트리 1팀 토이프로젝트
 
-개발스택
-##Next.js
+##개발스택
+###Next.js
 React 를 이용하여 Client Side Rendering (CSR) 와 Server Side Rendering (SSR) <br/>
 를 쉽게 혼합 하여 빠른 성능 을 낼 수 있게 도와주는 프레임워크.
-##Typescript
+###Typescript
 Javascript의 type을 엄격하게 지킬 수 있도록 도와줌.
 ##Redux-saga
 리액트/리덕스 애플리케이션의 사이드 이펙트, 데이터 fetching/캐시접근하지 않는 비동기 동작을,<br/>
