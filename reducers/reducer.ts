@@ -6,7 +6,7 @@ export const initialState: ExampleState = {
  error: null,
  lastUpdate: 0,
  light: false,
- placeholderData: null,
+ placeholderData: [],
 };
 
 interface HydratePayload {

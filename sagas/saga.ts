@@ -18,9 +18,10 @@ function* loadDataSaga() {
       axios.get,
       'https://rickandmortyapi.com/api/character/',
   );
-
+  // @ts-ignore
+  const {results}= data
   if (status === 200) {
-   yield put(loadDataSuccess(data.results));
+   yield put(loadDataSuccess(results));
   }
  } catch (err) {
   yield put(failure(err));
