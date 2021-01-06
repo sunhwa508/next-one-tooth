@@ -8,7 +8,7 @@ type Props = {
 }
 
 const PostItem = ({ data }: Props) => (
-  <Link href="/anonymous/[id]" as={`/anonymous/${data.id}`}>
+  <Link href={"/anonymous/[id]"} as={`/anonymous/${data.id}`}>
     <a>
       {data.id}: {data.name}<br/>
      {data.contents}
