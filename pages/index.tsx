@@ -10,16 +10,16 @@
 // export default IndexPage;
 
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { END } from 'redux-saga';
+import Clock from 'components/clock';
+import { createSelector } from 'reselect';
+import Counter from 'components/counter';
 import { wrapper } from '../store';
 import { loadData, startClock, tickClock } from '../actions/action';
 import Layout from '../components/layout';
-import Clock from 'components/clock';
-import { useSelector } from 'react-redux';
-import { createSelector } from 'reselect';
+
 import { RootStateInterface } from '../interfaces';
-import Counter from 'components/counter';
 
 const selectData = createSelector(
 	(state: RootStateInterface) => state.rdcExample.lastUpdate,

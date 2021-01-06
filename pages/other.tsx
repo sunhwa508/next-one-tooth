@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import Layout from 'components/layout';
 import { wrapper } from '../store';
 import { startClock, tickClock } from '../actions/action';
-import Layout from 'components/layout';
 
 const Other = () => {
 	const dispatch = useDispatch();
