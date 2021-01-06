@@ -2,7 +2,7 @@ import { all, call, delay, put, take, takeLatest } from 'redux-saga/effects';
 import axios, { AxiosResponse } from 'axios';
 
 import { failure, loadDataSuccess, tickClock } from '../actions/action';
-import { Post, actionTypesExample } from '../interfaces';
+import { User, actionTypesExample } from '../interfaces';
 
 function* runClockSaga() {
  yield take(actionTypesExample.START_CLOCK);
@@ -14,7 +14,7 @@ function* runClockSaga() {
 
 function* loadDataSaga() {
  try {
-  const { status, data }: AxiosResponse<Post[]> = yield call(
+  const { status, data }: AxiosResponse<User[]> = yield call(
       axios.get,
       'https://jsonplaceholder.typicode.com/users',
   );

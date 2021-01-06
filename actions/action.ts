@@ -7,8 +7,7 @@ import {
  LoadData,
  StartClock,
  TickClock,
-    Post,
-} from '../interfaces';
+ User} from '../interfaces';
 
 export function failure(error: Error): Failure {
  return {
@@ -33,7 +32,7 @@ export function loadData(): LoadData {
  return { type: actionTypesExample.LOAD_DATA };
 }
 
-export function loadDataSuccess(data: Post[]): { data: Post[]; type: actionTypesExample.LOAD_DATA_SUCCESS } {
+export function loadDataSuccess(data: User[]): { data: User[]; type: actionTypesExample.LOAD_DATA_SUCCESS } {
  return {
   type: actionTypesExample.LOAD_DATA_SUCCESS,
   data,
