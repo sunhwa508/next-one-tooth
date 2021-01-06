@@ -1,7 +1,7 @@
 import { all, call, delay, put, take, takeLatest } from 'redux-saga/effects';
 import axios, { AxiosResponse } from 'axios';
 
-import { failure, loadDataSuccess, tickClock } from '../actions/act';
+import { failure, loadDataSuccess, tickClock } from '../actions/action';
 import { Post, actionTypesExample } from '../interfaces';
 
 function* runClockSaga() {

@@ -5,7 +5,15 @@ export type Post = {
   name: string
   contents: string
 }
+export interface ApiResult {
+  id: number;
+  name: string;
+}
 
+export interface ApiExampleState {
+  apiResult: ApiResult | null;
+  error: null | Error;
+}
 export enum actionTypesExample {
   FAILURE = 'FAILURE',
   INCREMENT = 'INCREMENT',
