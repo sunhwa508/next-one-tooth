@@ -16,7 +16,7 @@ import Clock from 'components/clock';
 import { createSelector } from 'reselect';
 import Counter from 'components/counter';
 import { wrapper } from '../store';
-import { startClock, tickClock } from '../actions/action';
+import {loadData, startClock, tickClock} from '../actions/action';
 import Layout from '../components/layout';
 
 import { RootStateInterface } from '../interfaces';
@@ -33,6 +33,7 @@ const selectData = createSelector(
 const Index = () => {
 	const dispatch = useDispatch();
 	const { lastUpdate, light , placeholderData, error} = useSelector(selectData);
+
 	useEffect(() => {
 		dispatch(startClock());
 	}, [dispatch]);
@@ -54,12 +55,11 @@ const Index = () => {
 export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
 	store.dispatch(tickClock(false));
 //비동기 api
-	// if (!store.getState().placeholderData) {
-	// 	store.dispatch(loadData());
-	// 	store.dispatch(END);
-	// }
+	if (!store.getState().placeholderData) {
+		store.dispatch(loadData());
+		store.dispatch(END);
+	}
 
-	store.dispatch(END);
 	await store.sagaTask?.toPromise();
 });
 

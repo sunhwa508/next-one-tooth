@@ -16,11 +16,11 @@ function* loadDataSaga() {
  try {
   const { status, data }: AxiosResponse<User[]> = yield call(
       axios.get,
-      'https://jsonplaceholder.typicode.com/users',
+      'https://rickandmortyapi.com/api/character/',
   );
 
   if (status === 200) {
-   yield put(loadDataSuccess(data));
+   yield put(loadDataSuccess(data.results));
   }
  } catch (err) {
   yield put(failure(err));

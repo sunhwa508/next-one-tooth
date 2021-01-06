@@ -1,15 +1,20 @@
 import React from 'react';
-import { Post } from '../../interfaces';
+import { User } from '../../interfaces';
 
 interface ListParams {
- data: Post;
+ data: User;
 }
 
 const List: React.FC<ListParams> = ({ data }: ListParams) => {
+ const {id, name, image, status} = data
  return (
-     <div>
-      {data.id} / {data.name} / {data.contents}
-     </div>
+     // @ts-ignore
+     <details close >
+      <summary>도수 M 버전 {id}</summary>
+      <p>{name}</p>
+      <img src={image} alt={"character"}/>
+      <p>Status : {status}</p>
+     </details>
  );
 };
 

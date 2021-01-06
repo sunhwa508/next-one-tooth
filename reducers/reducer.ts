@@ -39,6 +39,12 @@ const reducer = (
     ...{ count: initialState.count },
    };
 
+  case actionTypesExample.LOAD_DATA_SUCCESS:
+   return {
+    ...state,
+    ...{ placeholderData: action.data },
+   };
+
   case actionTypesExample.TICK_CLOCK:
    return {
     ...state,

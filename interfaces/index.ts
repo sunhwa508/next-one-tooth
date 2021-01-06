@@ -1,30 +1,17 @@
 //각 포스트 타입 설정
 export interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    };
-  };
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
-  };
-}
-export interface animal {
-  id: number;
-  name: string;
+  id: number,
+  name: string,
+  status: string,
+  species: string,
+  type: string,
+  gender: string,
+  origin:object,
+  location: object,
+  image: string,
+  episode:[],
+  url: string,
+  created: string,
 }
 
 export type Post = {
@@ -84,6 +71,7 @@ export interface LoadData {
 }
 
 export interface LoadDataSuccess {
+  data: any;
   type: actionTypesExample.LOAD_DATA_SUCCESS;
 }
 
@@ -113,7 +101,7 @@ export interface ExampleState {
   error: null | Error;
   lastUpdate: number;
   light: boolean;
-  placeholderData: Post[] | null;
+  placeholderData:[];
 }
 
 export interface RootStateInterface {
