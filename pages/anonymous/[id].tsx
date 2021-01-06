@@ -4,7 +4,7 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import { Post } from '../../interfaces'
 import { samplePostData } from '../../utils/sample-data'
 import Layout from '../../components/layout'
-import ListDetail from '../../components/ListDetail'
+import PostDetail from '../../components/PostDetail'
 
 type Props = {
   item?: Post
@@ -28,7 +28,7 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
         item ? item.name : 'User Detail'
       } | Next.js + TypeScript Example`}
     >
-      {item && <ListDetail item={item} />}
+      {item && <PostDetail item={item} />}
     </Layout>
   )
 }
@@ -36,7 +36,7 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
 export default StaticPropsDetail
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // Get the paths we want to pre-render based on posts
+  // Get the paths we want to pre-render based on anonymous
   const paths = samplePostData.map((user) => ({
     params: { id: user.id.toString() },
   }))

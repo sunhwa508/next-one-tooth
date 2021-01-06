@@ -1,10 +1,10 @@
-import Layout from '../../components/Layout'
+import Layout from '../../components/layout'
 import React from "react";
 
-const Release = () => (
-    <Layout title="릴리즈노트">
-     <h1>릴리즈노트</h1>
+const Teampage = () => (
+    <Layout title="개발자소개">
+     <h1>개발자소개</h1>
     </Layout>
 )
 
-export default Release
+export default Teampage

@@ -1,9 +1,9 @@
-import { User } from '../interfaces'
+import { Post } from '../interfaces'
 
-/** Dummy user data. */
-export const sampleUserData: User[] = [
-  { id: 101, name: 'Alice' },
-  { id: 102, name: 'Bob' },
-  { id: 103, name: 'Caroline' },
-  { id: 104, name: 'Dave' },
+/** Dummy posts data. */
+export const samplePostData: Post[] = [
+  { id: 101, name: '봉우' ,  contents: "안녕하세요"},
+  { id: 102, name: '용재'  ,  contents: "안녕하세요"},
+  { id: 103, name: '성진' ,  contents: "안녕하세요" },
+  { id: 104, name: '대원'  ,  contents: "안녕하세요"},
 ]

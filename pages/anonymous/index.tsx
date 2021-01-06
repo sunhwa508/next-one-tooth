@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 import { Post } from '../../interfaces'
 import { samplePostData } from '../../utils/sample-data'
 import Layout from '../../components/layout'
-import List from "../../components/List";
+import PostList from "../../components/PostList";
 
 type Props = {
   items: Post[]
@@ -12,8 +12,7 @@ type Props = {
 const WithStaticProps = ({ items }: Props) => (
   <Layout title="익명게시판">
     <h1>익명게시판</h1>
-   <p>You are currently on: /users</p>
-   <List items={items} />
+   <PostList items={items} />
   </Layout>
 )
 
