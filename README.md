@@ -49,3 +49,13 @@ https://github.com/vercel/next.js/tree/canary/examples/with-redux-saga
 ## babel 설정 
 
 ## prettier 설정
+```bash
+npm run prettier
+```
+
+## 시작하기
+```bash
+npm run build
+npm run start
+```
+
