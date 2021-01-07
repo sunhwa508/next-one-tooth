@@ -1,9 +1,5 @@
 import { HYDRATE } from 'next-redux-wrapper';
-import {
-  State,
-  Actions,
-  actionTypes,
-} from '../interfaces';
+import { State, Actions, actionTypes } from '../interfaces';
 
 export const initialState: State = {
   error: null,
@@ -14,7 +10,7 @@ interface HydratePayload {
   reducer: State;
 }
 
-const reducer = (
+const rootReducer = (
   state = initialState,
   action: Actions | { type: typeof HYDRATE; payload: HydratePayload },
 ): State => {
@@ -33,4 +29,4 @@ const reducer = (
   }
 };
 
-export default reducer;
+export default rootReducer;

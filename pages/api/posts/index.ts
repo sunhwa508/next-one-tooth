@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { samplePostData } from 'utils/sample-data';
 
+//동적(다이나믹) 라우팅
 const handler = (_req: NextApiRequest, res: NextApiResponse) => {
   try {
     if (!Array.isArray(samplePostData)) {

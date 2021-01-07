@@ -11,7 +11,7 @@ type Props = {
   errors?: string;
 };
 
-const StaticPropsDetail = ({ item, errors }: Props) => {
+const AnonymousPost = ({ item, errors }: Props) => {
   if (errors) {
     return (
       <Layout title="Error">
@@ -29,8 +29,10 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
   );
 };
 
-export default StaticPropsDetail;
+export default AnonymousPost;
 
+// Docs Specify dynamic routes to pre-render based on data.
+// data에 기반하여 pre-render할 동적 라우팅을 적어준다. (getStaticProps와 함께 쓰임.)
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = samplePostData.map((user) => ({
     params: { id: user.id.toString() },
@@ -39,6 +41,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
+//DOCS Fetch data at build time.
+//빌드 시 한번 패치되며 변경 되지 않는다.
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   try {
     const id = params?.id;

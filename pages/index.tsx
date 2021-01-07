@@ -30,8 +30,14 @@ const Index = () => {
   );
 };
 
+// getServerSideProps가 Index먼저 실행된다
+// export const getServerSideProps = wrapper.getServerSideProps((store) => {
+//   // REQUEST가 SUCCESS가 될 때까지 기다려줌
+//   store.dispatch(END);
+//   await store.sagaTask?.toPromise();
+// });
+
 export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
-  //비동기 api
   if (!store.getState().placeholderData) {
     store.dispatch(loadData());
     store.dispatch(END);

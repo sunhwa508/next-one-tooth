@@ -33,9 +33,8 @@ export enum actionTypes {
   FAILURE = 'FAILURE',
   LOAD_DATA = 'LOAD_DATA',
   LOAD_DATA_SUCCESS = 'LOAD_DATA_SUCCESS',
-  HYDRATE= 'HYDRATE',
+  HYDRATE = 'HYDRATE',
 }
-
 
 export type Actions = Failure | LoadData | LoadDataSuccess;
 
@@ -61,4 +60,6 @@ export interface State {
 export interface RootStateInterface {
   reducer: State;
 }
-
+export interface LooseObject {
+  [key: string]: any;
+}

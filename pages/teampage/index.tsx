@@ -1,10 +1,10 @@
 import Layout from 'components/layout';
 import React from 'react';
 
-const Teampage = () => (
+const Team = () => (
   <Layout title="개발자소개">
     <h1>개발자소개</h1>
   </Layout>
 );
 
-export default Teampage;
+export default Team;
