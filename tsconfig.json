@@ -23,16 +23,16 @@
     "baseUrl": "./",
     "paths": {
       "utils/*": [
-        "utils/*"
+        "src/utils/*"
       ],
       "components/*": [
-        "components/*"
+        "src/components/*"
       ],
       "pages/*": [
-        "pages/*"
+        "src/pages/*"
       ],
       "interfaces/*": [
-        "interfaces/*"
+        "src/interfaces/*"
       ]
     }
   },

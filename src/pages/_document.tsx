@@ -1,5 +1,4 @@
 import Document, {
-  DocumentContext,
   Html,
   Main,
   Head,
@@ -8,15 +7,12 @@ import Document, {
 import React from 'react';
 
 class MyDocument extends Document {
-  //getStaticProps 서버에서 미리 처리하도록 도와줌
-  static async getStaticProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
-  }
+
   render() {
     return (
       <Html lang="ko">
         <Head>
+         <title>one-tooth 일이팀</title>
           <meta charSet="utf-8" />
         </Head>
         <body>

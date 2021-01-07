@@ -1,22 +1,13 @@
 import React from 'react';
-import Head from 'next/head';
-import { NextComponentType } from 'next';
-import { AppContext, AppInitialProps, AppProps } from 'next/app';
+import App, { AppContext, AppProps } from 'next/app';
 import { wrapper } from '../../store';
 import "tailwindcss/tailwind.css";
 import '../styles/globals.css'
-const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
-  Component,
-  pageProps,
-}) => {
-  return (
-    <>
-      <Head>
-        <title>one-tooth 일이팀</title>
-      </Head>
-      <Component {...pageProps} />
-    </>
-  );
-};
-
-export default wrapper.withRedux(App);
+function MyApp({ Component, pageProps }: AppProps) {
+ return <Component {...pageProps} />
+}
+MyApp.getInitialProps = async (appContext: AppContext) => {
+ const appProps = await App.getInitialProps(appContext);
+ return { ...appProps }
+}
+export default wrapper.withRedux(MyApp);
