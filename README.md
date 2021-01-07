@@ -47,7 +47,8 @@ next-redux-saga을 사용할 필요가 없었다.
 * https://github.com/vercel/next.js/tree/canary/examples/with-redux-saga
 * https://rickandmortyapi.com/api/character/
 ## babel 설정 
-
+## tailwind 설정 
+* https://tailwindcss.com/docs/guides/nextjs
 ## prettier 설정
 ```bash
 npm run prettier
