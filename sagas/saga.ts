@@ -2,7 +2,7 @@ import { all, call, put, takeLatest } from 'redux-saga/effects';
 import axios, { AxiosResponse } from 'axios';
 
 import { failure, loadDataSuccess } from '../actions/action';
-import { User, actionTypesExample } from '../interfaces';
+import { User, actionTypes } from '../interfaces';
 
 function* loadDataSaga() {
   try {
@@ -10,8 +10,8 @@ function* loadDataSaga() {
       axios.get,
       'https://rickandmortyapi.com/api/character/',
     );
-    // @ts-ignore
-    const { results } = data;
+
+    const { results }:any = data;
     if (status === 200) {
       yield put(loadDataSuccess(results));
     }
@@ -21,7 +21,7 @@ function* loadDataSaga() {
 }
 
 function* rootSaga(): Generator {
-  yield all([takeLatest(actionTypesExample.LOAD_DATA, loadDataSaga)]);
+  yield all([takeLatest(actionTypes.LOAD_DATA, loadDataSaga)]);
 }
 
 export default rootSaga;

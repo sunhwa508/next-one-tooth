@@ -10,8 +10,8 @@ import { RootStateInterface } from '../interfaces';
 import List from 'components/list';
 
 const selectData = createSelector(
-  (state: RootStateInterface) => state.rdcExample.placeholderData,
-  (state: RootStateInterface) => state.rdcExample.error,
+  (state: RootStateInterface) => state.reducer.placeholderData,
+  (state: RootStateInterface) => state.reducer.error,
   (placeholderData, error) => ({ placeholderData, error }),
 );
 
@@ -31,7 +31,7 @@ const Index = () => {
 };
 
 export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
-  //비동기 api
+
   if (!store.getState().placeholderData) {
     store.dispatch(loadData());
     store.dispatch(END);

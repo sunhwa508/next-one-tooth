@@ -1,28 +1,28 @@
 import { HYDRATE } from 'next-redux-wrapper';
 import {
-  ExampleState,
-  ActionsExample,
-  actionTypesExample,
+  State,
+  Actions,
+  actionTypes,
 } from '../interfaces';
 
-export const initialState: ExampleState = {
+export const initialState: State = {
   error: null,
   placeholderData: [],
 };
 
 interface HydratePayload {
-  rdcExample: ExampleState;
+  rdcExample: State;
 }
 
 const reducer = (
   state = initialState,
-  action: ActionsExample | { type: typeof HYDRATE; payload: HydratePayload },
-): ExampleState => {
+  action: Actions | { type: typeof HYDRATE; payload: HydratePayload },
+): State => {
   switch (action.type) {
     case HYDRATE:
       return { ...state, ...action.payload.rdcExample };
 
-    case actionTypesExample.LOAD_DATA_SUCCESS:
+    case actionTypes.LOAD_DATA_SUCCESS:
       return {
         ...state,
         ...{ placeholderData: action.data },

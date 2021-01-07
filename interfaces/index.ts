@@ -25,44 +25,40 @@ export interface ApiResult {
   name: string;
 }
 
-export interface ApiExampleState {
+export interface ApiState {
   apiResult: ApiResult | null;
   error: null | Error;
 }
-export enum actionTypesExample {
+export enum actionTypes {
   FAILURE = 'FAILURE',
   LOAD_DATA = 'LOAD_DATA',
   LOAD_DATA_SUCCESS = 'LOAD_DATA_SUCCESS',
+  HYDRATE= 'HYDRATE',
 }
 
-export type ActionsExample = Failure | LoadData | LoadDataSuccess;
+
+export type Actions = Failure | LoadData | LoadDataSuccess;
 
 export interface Failure {
-  type: actionTypesExample.FAILURE;
+  type: actionTypes.FAILURE;
   error: Error;
 }
 
 export interface LoadData {
-  type: actionTypesExample.LOAD_DATA;
+  type: actionTypes.LOAD_DATA;
 }
 
 export interface LoadDataSuccess {
   data: any;
-  type: actionTypesExample.LOAD_DATA_SUCCESS;
+  type: actionTypes.LOAD_DATA_SUCCESS;
 }
 
-export interface ExampleState {
+export interface State {
   error: null | Error;
   placeholderData: [];
 }
 
 export interface RootStateInterface {
-  rdcExample: ExampleState;
+  reducer: State;
 }
 
-export const actionTypes = {
-  FAILURE: 'FAILURE',
-  LOAD_DATA: 'LOAD_DATA',
-  LOAD_DATA_SUCCESS: 'LOAD_DATA_SUCCESS',
-  HYDRATE: 'HYDRATE',
-};
