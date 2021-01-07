@@ -2,12 +2,12 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { END } from 'redux-saga';
 import { createSelector } from 'reselect';
-import { wrapper } from '../store';
+import { wrapper } from '../../store';
 import { loadData } from '../actions/action';
-import Layout from '../components/layout';
+import Layout from '../layouts/layout';
 
 import { RootStateInterface } from '../interfaces';
-import List from 'components/list';
+import List from '../components/list';
 
 const selectData = createSelector(
   (state: RootStateInterface) => state.reducer.placeholderData,
@@ -20,12 +20,15 @@ const Index = () => {
 
   return (
     <Layout title="ONE-TOOTH">
-      <h1>릴리즈노트</h1>
-      {placeholderData &&
+      <div className={"cursor-pointer shadow grid grid-cols-3 gap-4 items-center justify-between relative rounded-lg  px-5 py-5 bg-gray"}>
+        {placeholderData &&
         placeholderData.map((v, k) => {
           return <List key={`list-${k}`} data={v} />;
         })}
-      {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}
+        {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}
+      </div>
+
+      <div  className="absolute top-0 right-0 btn btn-secondary mr-4 mt-4 cursor-pointer"> 검색</div>
     </Layout>
   );
 };

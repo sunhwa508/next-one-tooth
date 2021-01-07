@@ -7,7 +7,7 @@ type ListDetailProps = {
 };
 
 const PostDetail = ({ item: post }: ListDetailProps) => (
-  <div>
+  <div className="flex-auto text-xl font-semibold dark:border-red-900 bg-red-50 dark:bg-red-900 rounded p-6 my-6">
     <h1>닉네임 {post.name}</h1>
     <p>ID: {post.id}</p>
     <p>내용 : {post.contents}</p>

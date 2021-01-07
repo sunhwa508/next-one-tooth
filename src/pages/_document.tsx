@@ -22,7 +22,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <link href="/components/css/globalStyle.css" rel="stylesheet" />
+          <link href="/src/components/css/globalStyle.css" rel="stylesheet" />
         </body>
       </Html>
     );

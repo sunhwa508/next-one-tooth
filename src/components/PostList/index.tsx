@@ -7,7 +7,7 @@ type Props = {
 };
 
 const PostList = ({ items }: Props) => (
-  <ul>
+  <ul className={"bg-black"}>
     {items.map((item) => (
       <li key={item.id}>
         <PostItem data={item} />

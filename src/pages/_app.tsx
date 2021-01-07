@@ -2,8 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 import { NextComponentType } from 'next';
 import { AppContext, AppInitialProps, AppProps } from 'next/app';
-import { wrapper } from '../store';
-
+import { wrapper } from '../../store';
+import "tailwindcss/tailwind.css";
+import '../styles/globals.css'
 const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,
   pageProps,

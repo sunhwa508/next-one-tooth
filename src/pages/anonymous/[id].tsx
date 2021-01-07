@@ -1,9 +1,9 @@
 import React from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
-import { samplePostData } from 'utils/sample-data';
+import { samplePostData } from '../../utils/sample-data';
 import { Post } from '../../interfaces';
-import Layout from '../../components/layout';
+import Layout from '../../layouts/layout';
 import PostDetail from '../../components/PostDetail';
 
 type Props = {

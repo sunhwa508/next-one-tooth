@@ -1,9 +1,9 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
 
-import { samplePostData } from 'utils/sample-data';
+import { samplePostData } from '../../utils/sample-data';
 import { Post } from '../../interfaces';
-import Layout from '../../components/layout';
+import Layout from '../../layouts/layout';
 import PostList from '../../components/PostList';
 
 type Props = {
@@ -13,7 +13,6 @@ type Props = {
 const Anonymous = ({ items }: Props) => (
   //getStaticProps 에서 받아온 items을 가져와 전달한다.
   <Layout title="익명게시판">
-    <h1>익명게시판</h1>
     <PostList items={items} />
   </Layout>
 );
