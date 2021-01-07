@@ -1,24 +1,24 @@
 //각 포스트 타입 설정
 export interface User {
-  id: number,
-  name: string,
-  status: string,
-  species: string,
-  type: string,
-  gender: string,
-  origin:object,
-  location: object,
-  image: string,
-  episode:[],
-  url: string,
-  created: string,
+  id: number;
+  name: string;
+  status: string;
+  species: string;
+  type: string;
+  gender: string;
+  origin: object;
+  location: object;
+  image: string;
+  episode: [];
+  url: string;
+  created: string;
 }
 
 export type Post = {
-  id: number
-  name: string
-  contents: string
-}
+  id: number;
+  name: string;
+  contents: string;
+};
 
 export interface ApiResult {
   id: number;
@@ -35,10 +35,7 @@ export enum actionTypesExample {
   LOAD_DATA_SUCCESS = 'LOAD_DATA_SUCCESS',
 }
 
-export type ActionsExample =
-    | Failure
-    | LoadData
-    | LoadDataSuccess
+export type ActionsExample = Failure | LoadData | LoadDataSuccess;
 
 export interface Failure {
   type: actionTypesExample.FAILURE;
@@ -56,7 +53,7 @@ export interface LoadDataSuccess {
 
 export interface ExampleState {
   error: null | Error;
-  placeholderData:[];
+  placeholderData: [];
 }
 
 export interface RootStateInterface {
@@ -68,4 +65,4 @@ export const actionTypes = {
   LOAD_DATA: 'LOAD_DATA',
   LOAD_DATA_SUCCESS: 'LOAD_DATA_SUCCESS',
   HYDRATE: 'HYDRATE',
-}
+};

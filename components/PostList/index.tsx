@@ -1,10 +1,10 @@
-import * as React from 'react'
-import PostItem from '../PostItem'
-import { Post } from '../../interfaces'
+import * as React from 'react';
+import PostItem from '../PostItem';
+import { Post } from '../../interfaces';
 
 type Props = {
-  items: Post[]
-}
+  items: Post[];
+};
 
 const PostList = ({ items }: Props) => (
   <ul>
@@ -12,9 +12,8 @@ const PostList = ({ items }: Props) => (
       <li key={item.id}>
         <PostItem data={item} />
       </li>
-
     ))}
   </ul>
-)
+);
 
-export default PostList
+export default PostList;

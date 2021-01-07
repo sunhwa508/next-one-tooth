@@ -1,10 +1,10 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import { Post } from '../../interfaces'
+import { Post } from '../../interfaces';
 
 type ListDetailProps = {
-  item: Post
-}
+  item: Post;
+};
 
 const PostDetail = ({ item: post }: ListDetailProps) => (
   <div>
@@ -12,6 +12,6 @@ const PostDetail = ({ item: post }: ListDetailProps) => (
     <p>ID: {post.id}</p>
     <p>내용 : {post.contents}</p>
   </div>
-)
+);
 
-export default PostDetail
+export default PostDetail;
