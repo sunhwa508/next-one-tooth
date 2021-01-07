@@ -2,10 +2,7 @@ import { HYDRATE } from 'next-redux-wrapper';
 import { ExampleState, ActionsExample, actionTypesExample } from '../interfaces';
 
 export const initialState: ExampleState = {
- count: 0,
  error: null,
- lastUpdate: 0,
- light: false,
  placeholderData: [],
 };
 
@@ -21,34 +18,10 @@ const reducer = (
   case HYDRATE:
    return { ...state, ...action.payload.rdcExample };
 
-  case actionTypesExample.INCREMENT:
-   return {
-    ...state,
-    ...{ count: state.count + 1 },
-   };
-
-  case actionTypesExample.DECREMENT:
-   return {
-    ...state,
-    ...{ count: state.count - 1 },
-   };
-
-  case actionTypesExample.RESET:
-   return {
-    ...state,
-    ...{ count: initialState.count },
-   };
-
   case actionTypesExample.LOAD_DATA_SUCCESS:
    return {
     ...state,
     ...{ placeholderData: action.data },
-   };
-
-  case actionTypesExample.TICK_CLOCK:
-   return {
-    ...state,
-    ...{ lastUpdate: action.ts, light: !!action.light },
    };
 
   default:

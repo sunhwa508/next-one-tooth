@@ -1,16 +1,9 @@
-import { all, call, delay, put, take, takeLatest } from 'redux-saga/effects';
+import { all, call,  put,  takeLatest } from 'redux-saga/effects';
 import axios, { AxiosResponse } from 'axios';
 
-import { failure, loadDataSuccess, tickClock } from '../actions/action';
+import { failure, loadDataSuccess } from '../actions/action';
 import { User, actionTypesExample } from '../interfaces';
 
-function* runClockSaga() {
- yield take(actionTypesExample.START_CLOCK);
- while (true) {
-  yield put(tickClock(false));
-  yield delay(1000);
- }
-}
 
 function* loadDataSaga() {
  try {
@@ -28,8 +21,8 @@ function* loadDataSaga() {
  }
 }
 
-function* sagaExample(): Generator {
- yield all([call(runClockSaga), takeLatest(actionTypesExample.LOAD_DATA, loadDataSaga)]);
+function* rootSaga(): Generator {
+ yield all([takeLatest(actionTypesExample.LOAD_DATA, loadDataSaga)]);
 }
 
-export default sagaExample;
+export default rootSaga;
