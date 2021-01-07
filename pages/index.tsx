@@ -31,7 +31,7 @@ const Index = () => {
 };
 
 export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
-
+  //비동기 api
   if (!store.getState().placeholderData) {
     store.dispatch(loadData());
     store.dispatch(END);

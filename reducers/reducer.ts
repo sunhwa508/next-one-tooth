@@ -11,7 +11,7 @@ export const initialState: State = {
 };
 
 interface HydratePayload {
-  rdcExample: State;
+  reducer: State;
 }
 
 const reducer = (
@@ -20,7 +20,7 @@ const reducer = (
 ): State => {
   switch (action.type) {
     case HYDRATE:
-      return { ...state, ...action.payload.rdcExample };
+      return { ...state, ...action.payload.reducer };
 
     case actionTypes.LOAD_DATA_SUCCESS:
       return {
