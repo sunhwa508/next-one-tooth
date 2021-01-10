@@ -1,4 +1,4 @@
-//각 포스트 타입 설정
+// 타입 설정
 export interface User {
   id: number;
   name: string;
@@ -54,7 +54,7 @@ export interface LoadDataSuccess {
 
 export interface State {
   error: null | Error;
-  placeholderData: [];
+  fetchedData: [];
 }
 
 export interface RootStateInterface {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Post } from '../../interfaces';
+import { Post } from 'interfaces/index';
 
 type Props = {
   data: Post;

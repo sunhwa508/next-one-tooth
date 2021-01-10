@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Post } from '../../interfaces';
+import { Post } from 'interfaces/index';
 
 type ListDetailProps = {
   item: Post;

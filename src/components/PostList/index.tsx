@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PostItem from '../PostItem';
-import { Post } from '../../interfaces';
+import { Post } from 'interfaces/index';
 
 type Props = {
   items: Post[];

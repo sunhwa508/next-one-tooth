@@ -4,7 +4,6 @@ import axios, { AxiosResponse } from 'axios';
 import { failure, loadDataSuccess } from '../actions/action';
 import { User, actionTypes, LooseObject } from '../interfaces';
 
-//사가 함수의 예
 function* loadDataSaga() {
   try {
     // call 입력된 함수를 대신 호출함입력된 함수가 프로미스를 반환하면 프로미스가 처리됨 상태가 될 때까지 기다림
@@ -12,6 +11,8 @@ function* loadDataSaga() {
       axios.get,
       'https://rickandmortyapi.com/api/character/',
     );
+    // call : 함수호출 후 패치될때까지 기다려준다.
+    // fork : 기다리지 않음
 
     const { results }: LooseObject = data;
 
@@ -28,7 +29,7 @@ function* loadDataSaga() {
 
 function* rootSaga(): Generator {
   //all, fork: 사가 함수를 추가할 때 사용하는 함수
-  //takeLatest 리퀘스트 응답만 받고 싶을 때 사용
+  //takeLatest 가장 마지막에 처리한 결과만 가져옴
   //takeEvery 여러개의 fetchData 인스턴스를 동시에 시작하게 함
   yield all([takeLatest(actionTypes.LOAD_DATA, loadDataSaga)]);
 }

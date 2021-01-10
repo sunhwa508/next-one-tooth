@@ -10,19 +10,19 @@ import { RootStateInterface } from 'interfaces/index';
 import List from 'components/list';
 
 const selectData = createSelector(
-    (state: RootStateInterface) => state.reducer.placeholderData,
+    (state: RootStateInterface) => state.reducer.fetchedData,
     (state: RootStateInterface) => state.reducer.error,
-    (placeholderData, error) => ({ placeholderData, error }),
+    (fetchedData, error) => ({ fetchedData, error }),
 );
 
 const Index = () => {
- const { placeholderData, error } = useSelector(selectData);
+ const { fetchedData, error } = useSelector(selectData);
 
  return (
      <Layout title="ONE-TOOTH">
       <div className={"cursor-pointer shadow grid grid-cols-3 gap-4 items-center justify-between relative rounded-lg  px-5 py-5 bg-gray"}>
-       {placeholderData &&
-       placeholderData.map((v, k) => {
+       {fetchedData &&
+       fetchedData.map((v, k) => {
         return <List key={`list-${k}`} data={v} />;
        })}
        {error && <p style={{ color: 'red' }}>Error: {error.message}</p>}
@@ -41,7 +41,7 @@ const Index = () => {
 // });
 
 export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
- if (!store.getState().placeholderData) {
+ if (!store.getState().fetchedData) {
   store.dispatch(loadData());
   store.dispatch(END);
  }
